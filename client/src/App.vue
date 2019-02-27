@@ -31,8 +31,7 @@ export default {
       eventBus.$on('booking-deleted', (id) => {
         this.deleteBooking(id)
       })
-
-
+      
   },
   methods: {
     fetchBookings(){
