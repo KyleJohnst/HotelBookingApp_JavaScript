@@ -52,7 +52,10 @@ export default {
         headers: { 'Content-Type': 'application/json'}
       })
       .then(res => res.json())
-      .then(res => eventBus.$emit('booking-added', res))
+      .then(res => {
+        eventBus.$emit('booking-added', res);
+        this.name = this.surname = this.email = "";
+      })
     }
   }
 }

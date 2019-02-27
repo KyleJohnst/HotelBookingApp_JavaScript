@@ -1,10 +1,18 @@
 <template lang="">
   <div id="bookingsGrid">
-    <div class="booking" v-for="booking in bookings">
-
+    <div class="booking" v-for="booking in bookings" v-if="!booking.checkedIn">
       <h3>{{booking.name}} {{booking.surname}}</h3>
       <p>{{booking.email}}</p>
-      <label for="checkedIn">Check In</label>
+      <label for="checkedIn">Checked In</label>
+      <input type="checkbox" v-on:change="checkIn(booking._id, booking.checkedIn)" v-model="booking.checkedIn">
+      <div class="">
+        <button v-on:click="deleteBooking(booking._id)">Delete Booking</button>
+      </div>
+    </div>
+    <div class="booking" v-for="booking in bookings" v-if="booking.checkedIn">
+      <h3>{{booking.name}} {{booking.surname}}</h3>
+      <p>{{booking.email}}</p>
+      <label for="checkedIn">Checked In</label>
       <input type="checkbox" v-on:change="checkIn(booking._id, booking.checkedIn)" v-model="booking.checkedIn">
       <div class="">
         <button v-on:click="deleteBooking(booking._id)">Delete Booking</button>
