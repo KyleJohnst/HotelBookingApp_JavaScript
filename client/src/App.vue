@@ -23,6 +23,10 @@ export default {
   },
   mounted(){
     this.fetchBookings();
+
+    eventBus.$on('booking-added', (booking) => {
+      this.bookings.push(booking)
+    })
   },
   methods: {
     fetchBookings(){

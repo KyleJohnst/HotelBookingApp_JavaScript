@@ -51,6 +51,8 @@ export default {
         body: JSON.stringify(booking),
         headers: { 'Content-Type': 'application/json'}
       })
+      .then(res => res.json())
+      .then(res => eventBus.$emit('booking-added', res))
     }
   }
 }
