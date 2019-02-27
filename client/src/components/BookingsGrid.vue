@@ -1,14 +1,15 @@
 <template lang="">
-  <div id="bookingGrid">
-    <div class="booking">
-      <p>Hello World</p>
+  <div id="bookingsGrid">
+    <div class="booking" v-for="booking in bookings">
+      <!-- <p>Hello World</p> -->
+      <h3>{{booking.name}}</h3>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'bookingGrid',
+  name: 'bookingsGrid',
   props: ['bookings']
 }
 </script>

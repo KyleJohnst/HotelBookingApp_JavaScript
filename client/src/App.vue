@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="app">
-    <bookings-grid/>
+    <bookings-grid :bookings="bookings"/>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   methods: {
     fetchBookings(){
       fetch('http://localhost:3000/api/bookings')
-      .then(res = res.json())
+      .then(response => response.json())
       .then(bookings => this.bookings = bookings)
     }
   }
