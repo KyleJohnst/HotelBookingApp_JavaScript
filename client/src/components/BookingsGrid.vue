@@ -1,11 +1,14 @@
 <template lang="">
   <div id="bookingsGrid">
     <div class="booking" v-for="booking in bookings">
-      <!-- <p>Hello World</p> -->
+
       <h3>{{booking.name}} {{booking.surname}}</h3>
       <p>{{booking.email}}</p>
-      <p>{{booking.checkedIn}}</p>
-
+      <label for="checkedIn">Check In</label>
+      <input type="checkbox">
+      <div class="">
+        <button v-on:click="deleteBooking(booking._id)">Delete Booking</button>
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +16,14 @@
 <script>
 export default {
   name: 'bookingsGrid',
-  props: ['bookings']
+  props: ['bookings'],
+  methods: {
+    deleteBooking(id){
+      fetch('http://localhost:3000/api/bookings/' + id, {
+        method: 'DELETE'
+      })
+    }
+  }
 }
 </script>
 
