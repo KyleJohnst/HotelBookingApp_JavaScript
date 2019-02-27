@@ -20,10 +20,10 @@ export default {
     BookingsGrid
   },
   mounted(){
-    this.fetchData();
+    this.fetchBookings();
   },
   methods: {
-    fetchData(){
+    fetchBookings(){
       fetch('http://localhost:3000/api/bookings')
       .then(res = res.json())
       .then(bookings => this.bookings = bookings)
