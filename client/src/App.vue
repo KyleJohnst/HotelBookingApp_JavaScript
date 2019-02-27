@@ -1,11 +1,13 @@
 <template lang="html">
   <div id="app">
+    <booking-form />
     <bookings-grid :bookings="bookings"/>
   </div>
 </template>
 
 <script>
 import BookingsGrid from './components/BookingsGrid';
+import BookingForm from './components/BookingsForm';
 import { eventBus } from './main';
 
 export default {
@@ -16,7 +18,7 @@ export default {
     }
   },
   components: {
-    // BookingForm,
+    BookingForm,
     BookingsGrid
   },
   mounted(){
