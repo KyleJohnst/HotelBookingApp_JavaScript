@@ -2,7 +2,10 @@
   <div id="bookingsGrid">
     <div class="booking" v-for="booking in bookings">
       <!-- <p>Hello World</p> -->
-      <h3>{{booking.name}}</h3>
+      <h3>{{booking.name}} {{booking.surname}}</h3>
+      <p>{{booking.email}}</p>
+      <p>{{booking.checkedIn}}</p>
+
     </div>
   </div>
 </template>
