@@ -13,5 +13,17 @@ db.bookings.insertMany([
     surname: "Page",
     email: "x@x.com",
     checkedIn: false
+  },
+  {
+    name: "Rober",
+    surname: "Temple",
+    email: "x@x.com",
+    checkedIn: false
+  },
+  {
+    name: "Cammy",
+    surname: "Johnst",
+    email: "x@x.com",
+    checkedIn: false
   }
 ])

@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import {eventBus} from '../main'
+
 export default {
   name: 'bookingsGrid',
   props: ['bookings'],
@@ -22,6 +24,7 @@ export default {
       fetch('http://localhost:3000/api/bookings/' + id, {
         method: 'DELETE'
       })
+      .then(() => eventBus.$emit('booking-deleted', id))
     }
   }
 }
