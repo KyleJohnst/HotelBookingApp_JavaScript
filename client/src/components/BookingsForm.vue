@@ -3,23 +3,19 @@
     <h2>Create booking</h2>
     <div class="formStyle">
       <label for="name">Name:</label>
-      <input type="text" v-model="name"/>
+      <input type="text" v-model="name" required/>
     </div>
 
     <div class="formStyle">
       <label for="surname">Surname:</label>
-      <input type="text" v-model="surname"/>
+      <input type="text" v-model="surname" required/>
     </div>
 
     <div class="formStyle">
       <label for="email">Email</label>
-      <input type="text" v-model="email"/>
+      <input type="text" v-model="email" required/>
     </div>
 
-    <!-- <div class="formStyle">
-    <label for="checkedIn">Checked In</label>
-    <input type="checkbox" >
-  </div> -->
   <input type="submit" value="Save" id="save"/>
 </form>
 </template>
@@ -40,6 +36,7 @@ export default {
   methods: {
     addBooking(e){
       e.preventDefault()
+      if(this.name || this.surname || this.email === '') return;
       const booking = {
         name: this.name,
         surname: this.surname,
