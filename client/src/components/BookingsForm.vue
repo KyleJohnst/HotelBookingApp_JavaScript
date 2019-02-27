@@ -1,5 +1,5 @@
 <template lang="html">
-  <form id="" action="index.html" method="post" v-on:submit="addBooking">
+  <form id="bookingForm" action="index.html" method="post" v-on:submit="addBooking">
     <h2>Create booking</h2>
     <div class="formStyle">
       <label for="name">Name:</label>
@@ -13,7 +13,7 @@
 
     <div class="formStyle">
       <label for="email">Email</label>
-      <input type="text" v-model="email" required/>
+      <input type="email" v-model="email" required/>
     </div>
 
   <input type="submit" value="Save" id="save"/>
@@ -59,4 +59,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#bookingForm {
+  display: block;
+  background: #80808094;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  border-radius: 3px;
+}
+
+.formStyle {
+  display: inline-block;
+}
 </style>

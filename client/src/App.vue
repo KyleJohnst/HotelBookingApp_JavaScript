@@ -31,7 +31,7 @@ export default {
       eventBus.$on('booking-deleted', (id) => {
         this.deleteBooking(id)
       })
-      
+
   },
   methods: {
     fetchBookings(){
@@ -47,5 +47,15 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+body {
+  display: flex;
+  margin: 0 auto;
+  background-color: #d87575;
+  justify-content: center;
+}
+#app{
+  text-align: center;
+  width: 100%
+}
 </style>
