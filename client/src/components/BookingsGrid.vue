@@ -30,9 +30,10 @@ export default {
       const updateCheckIn = {
         checkedIn: checkedInState
       }
-      fetch('http://localhost:3000/api/sightings/' + id,{
+      // console.log(checkedInState);
+      fetch('http://localhost:3000/api/bookings/' + id,{
         method: 'PUT',
-        body: JSON.stringify(booking),
+        body: JSON.stringify(updateCheckIn),
         headers: { 'Content-Type': 'application/json'}
       })
     }
