@@ -63,7 +63,7 @@ export default {
   background: #545454cf;
   margin: auto;
 
-  max-width: 90%;
+  max-width: 65%;
   box-shadow: 1px 10px 10px 8px rgba(0, 0, 0, .5);
   border-radius: 8px;
 }

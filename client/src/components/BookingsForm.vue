@@ -1,5 +1,5 @@
 <template lang="html">
-  <form id="bookingForm" action="index.html" method="post" v-on:submit="addBooking">
+  <form id="bookingForm"  action="index.html" method="post" v-on:submit="addBooking">
     <h2>Create booking</h2>
     <div class="formStyle">
       <label for="name">Name:</label>
@@ -36,7 +36,7 @@ export default {
   methods: {
     addBooking(e){
       e.preventDefault()
-      if(this.name || this.surname || this.email === '') return;
+      if(this.name === '' || this.surname === '' || this.email === '') return;
       const booking = {
         name: this.name,
         surname: this.surname,
